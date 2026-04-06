@@ -41,11 +41,28 @@ function fatorial(num) {
 
 alert(fatorial(6))
 
+
 //d) Crie uma função que receba uma lista de números e retorne a média deles.
-function media(lista) {
-    for (let soma= 0; ; s) {
-        const element = array[index];
-        
-    }
-    
+
+function media(numLista) {
+    let i=0;
+    let soma= 0;
+    while (i<numLista.length) { //emquanto a posicao inicial exitir ate a posicao final (quantidade de n na lista)
+    soma = soma +numLista[i];
+    i++;
 }
+    let resultado = soma/numLista.length
+
+    return resultado
+}
+
+alert(media([6, 5, 2, 8, 2]))
+ 
+
+//e) implemente uma função que converta uma temperatura de Celsius para Fahreheint
+Faren=0
+function conversao(temperaturaC) {
+    let Faren = temperaturaC*1.8+32;        
+    return Faren
+}
+alert(conversao(26))
