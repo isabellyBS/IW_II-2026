@@ -23,10 +23,10 @@ R:
 
 
 4.	Diferença entre innerHTML e innerText. 
-R:
+R: Bia
  
 5.	O que são eventos? Exemplos: onclick, onchange, onmouseover.
-R:
+R: Bea
  
  
 Parte 2 — Prática  
@@ -35,22 +35,79 @@ Crie uma página com um título, um parágrafo e um botão. Ao clicar no botão,
 -->
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IW-II 13/04</title>
 </head>
 <body>
-    <h1></h1>
-    <p></p>
-    <!-- botao e script -->
-</body>
-</html>
-  
+    <h1>Vamos por o que aprendemos de DOM em prática né</h1>
+    <p id="MT">Texto</p>
+    <button onclick="mudarTexto()" id="btnMT">Mudar texto</button>
+    <script>
+        function mudarTexto() {
+            document.querySelector('p').innerHTML = 'Texto mudado';
+            document.getElementById('btnMT').innerText = 'O texto já foi alterado';
+        }
+    </script>
+    <br><br><br>
+
  <!--
 Parte 3 — Desafio (Opcional) Escolha um desafio: 
  
 -	Mudar a cor de fundo da página  
 -	Criar contador com botão  
  -->
+
+    <button onclick="btnMCF()">Mudar cor de fundo</button>
+    
+    <br><br>
+    <h4 id="Cont">Contagem: </h4>
+    <button onclick="Subtrair()">-1</button>
+    <button onclick="Zerar()">0</button>
+    <button onclick="Somar()">+1</button>
+
+    <script>
+        let i = 0; let cor="#f3cfd9";
+        function btnMCF(){
+            document.body.style.backgroundColor = cor;
+            i ++;
+            if (i == 1) {
+                cor = "#f3ddcf";}
+            else if (i == 2) {
+                cor = "#eef3cf";}
+            else if (i == 3) {
+                cor = "#cff3d5";}
+            else if (i == 4) {
+                cor = "#cfe3f3";}
+            else if (i == 5) {
+                cor = "#efcff3";}
+            else{
+                i = 0;
+                cor="#f3cfd9"
+            }
+        }
+
+
+        let contagem=0;
+        function Subtrair() {
+            contagem--;
+            document.getElementById('Cont').innerText = 'Contagem: ' + contagem;
+        }
+
+        function Zerar() {
+            contagem=0;
+            document.getElementById('Cont').innerText = 'Contagem: ' + contagem;
+        }
+
+        function Somar() {
+            contagem++;
+            document.getElementById('Cont').innerText = 'Contagem: ' + contagem;
+        }
+    </script>
+    
+</body>
+</html>
+
+
